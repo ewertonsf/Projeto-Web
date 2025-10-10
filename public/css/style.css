@@ -1,0 +1,14 @@
+/* cores (possibilidades) */
+/* cor primaria: #5C0029; */
+/* cor do hover primaria: #88003d */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F4F4F4;
+    font-size: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
