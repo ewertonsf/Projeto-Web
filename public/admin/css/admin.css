@@ -1,11 +1,19 @@
+:root {
+  --cor-primaria: #5C0029;       /* vinho escuro */
+  --cor-hover: #88003d;          /* vinho vibrante */
+  --cor-secundaria: #304d61;     /* azul petróleo acinzentado */
+  --cinza-chumbo: #232323;       /* neutro escuro */
+  --cor-clara: #F4F4F4;          /* neutro claro (background) */
+  --cor-clara-secundaria: #fff;    /* neutro claro (texto) */
+  --dourado: #c7a008;            /* detalhe opcional */
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 
 .container {
   display: flex;
@@ -15,11 +23,11 @@
 
 .barra-lateral {
   width: 250px;
-  background-color: #0b162c;
-  color: #fff;
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara-secundaria);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:space-between;
   padding: 20px;
 }
 
@@ -37,7 +45,7 @@
 }
 
 .barra-lateral a {
-  color: #cbd5e1;
+  color: var(--cor-clara-secundaria);
   text-decoration: none;
   display: block;
   padding: 8px 12px;
@@ -47,23 +55,27 @@
 
 .barra-lateral a:hover,
 .barra-lateral .active a {
-  background-color: #2563eb;
-  color: #fff;
+  background-color: var(--cor-hover);
+  color: var(--cor-clara-secundaria);
 }
 
 .botao-saida {
-  background-color: #dc2626;
-  color: #fff;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-clara-secundaria);
   border: none;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
 }
 
+.botao-saida:hover {
+  transform: translateY(-2px);
+}
+
 
 .conteudo-principal {
   flex: 1;
-  background-color: #f9fafb;
+  background-color: var(--cor-clara);
   padding: 30px;
 }
 
@@ -80,8 +92,8 @@
 }
 
 .botao-adicionar {
-  background-color: #2563eb;
-  color: #fff;
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara-secundaria);
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -90,7 +102,7 @@
 }
 
 .botao-adicionar:hover {
-  background-color: #1d4ed8;
+  background-color: var(--cor-hover);
 }
 
 .barra-pesquisa input {
@@ -103,7 +115,7 @@
 
 
 .caixa-vazia {
-  background-color: #fff;
+  background-color: var(--cor-clara-secundaria);
   border-radius: 10px;
   padding: 60px;
   text-align: center;
