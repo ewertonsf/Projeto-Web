@@ -1,0 +1,154 @@
+:root {
+    --cor-primaria: #5C0029;
+    /* vinho escuro */
+    --cor-hover: #88003d;
+    /* vinho vibrante */
+    --cor-secundaria: #304d61;
+    /* azul petróleo acinzentado */
+    --cinza-chumbo: #232323;
+    /* neutro escuro */
+    --cor-clara: #F4F4F4;
+    /* neutro claro (background) */
+    --cor-clara-secundaria: #fff;
+    /* neutro claro (texto) */
+    --dourado: #c7a008;
+    /* detalhe opcional */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--cor-clara);
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    background: var(--cor-clara-secundaria);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: fadeIn 1s ease forwards;
+}
+
+.btn-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--cor-primaria);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.btn-voltar i {
+    font-size: 10px;
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor-hover);
+    color: var(--cor-clara-secundaria);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(92, 0, 41, 0.3);
+}
+
+.login-image {
+    flex: 1;
+    background: url("../img/banner.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.login-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(92, 0, 41, 0.6), rgba(92, 0, 41, 0.2));
+}
+
+.login-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to right, rgba(92, 0, 41, 0.8), rgba(92, 0, 41, 0.4));
+    z-index: 2;
+}
+.box-branca-overlay {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    max-width: 500px;
+    position: absolute;
+    top: 50%;  
+    z-index: 5; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-clara-secundaria);
+    box-shadow: none;
+    border: none;
+}
+.bola-fundo {
+    position: absolute;
+    top: 50%;
+    right: 0; 
+    transform: translate(30%, -50%); 
+    font-size: 20rem; 
+    color: rgba(255, 255, 255, 0.1); 
+    z-index: 4; 
+    pointer-events: none; 
+}
+
+.coluna-rodape.contato ul {
+    list-style: none; /* Garante que não haja marcadores de lista */
+    padding: 0;
+}
+
+.coluna-rodape.contato ul li {
+    margin-bottom: 15px; /* Define o espaçamento vertical (ajuste o valor se precisar de mais/menos) */
+    display: flex; /* Garante que ícone e texto fiquem alinhados */
+    align-items: center;
+}
+
+.coluna-rodape.contato a,
+.coluna-rodape.contato i {
+    color: var(--cinza-chumbo); /* Define uma cor escura (Neutro Escuro) */
+    text-decoration: none; /* Remove sublinhado dos links */
+    transition: color 0.2s ease;
+}
+
+.coluna-rodape.contato i {
+    font-size: 1.2rem;
+    margin-right: 10px; /* Adiciona espaço entre o ícone e o texto */
+    color: var(--cor-primaria); /* Cor primária para o ÍCONE */
+}
+.coluna-rodape.contato a:hover {
+    color: var(--cor-primaria); /* Muda para a cor primária ao passar o mouse */
+}
+.login-text-overlay h1 {
+    margin-bottom: 30px; /* Aumenta o espaçamento abaixo do h1 (Ajuste o valor 30px se precisar de mais ou menos) */
+}
