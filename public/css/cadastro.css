@@ -110,7 +110,7 @@ body {
   gap: 16px 20px;
 }
 
-/* === icones === */
+
 .form-group {
   position: relative;
   display: flex;
@@ -149,12 +149,12 @@ body {
   color: var(--cor-hover);
 }
 
-/* Campos que ocupam linha inteira */
+
 .form-group.solo {
   grid-column: 1 / -1;
 }
 
-/* Botão de envio */
+
 .cadastro-btn {
   grid-column: 1 / -1;
   background-color: var(--cor-primaria);
@@ -178,7 +178,7 @@ body {
   box-shadow: 0 6px 16px rgba(92,0,41,0.3);
 }
 
-/* Responsividade */
+
 @media (max-width: 850px) {
   .cadastro-container {
     flex-direction: column;
@@ -194,7 +194,7 @@ body {
   }
 }
 
-/* Animação */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
