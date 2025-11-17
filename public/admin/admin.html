@@ -31,11 +31,24 @@
         <input type="text" placeholder="Buscar pelo nome do usuário...">
       </div>
 
-      <div class="caixa-vazia">
-        <div class="icon">xx</div>
-        <p>Nenhum usuário cadastrado</p>
+      <div class="tabela-container">
+        <table class="tabela-jogadores">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Posição</th>
+              <th>Categoria</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="lista-jogadores-tbody">
+            </tbody>
+        </table>
       </div>
     </main>
   </div>
+  <script src="js/admin.js"></script>
 </body>
 </html>

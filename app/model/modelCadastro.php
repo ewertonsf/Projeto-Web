@@ -1,5 +1,5 @@
 <?php
-require_once '../config/conexao.php';
+
 
 class JogadorModel {
     private $pdo;
