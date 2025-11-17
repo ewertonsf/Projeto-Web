@@ -22,7 +22,9 @@ function listarJogadores() {
                         <td>${jogador.categoria || 'N/D'}</td>
                         <td class="acoes">
                             <button class="btn-acao editar" title="Editar"><i class="fa-solid fa-pencil"></i></button>
-                            <button class="btn-acao deletar" title="Deletar"><i class="fa-solid fa-trash"></i></button>
+                            <button class="btn-acao deletar" title="Deletar" onclick="deletarJogador(${jogador.id})">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </td>
                     `;
                     
@@ -44,3 +46,29 @@ function listarJogadores() {
             alert('Erro de conexão ao buscar jogadores.');
         });
 }
+
+function deletarJogador(id) {
+
+    if (!confirm("Tem certeza que deseja deletar este jogador?")) {
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("id", id);
+
+    fetch('../../app/controller/controllerDelete.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Jogador deletado com sucesso!");
+            listarJogadores();
+        } else {
+            alert("Erro ao deletar: " + data.message);
+        }
+    })
+    .catch(error => console.error("Erro:", error));
+}
+
