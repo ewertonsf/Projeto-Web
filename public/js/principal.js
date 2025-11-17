@@ -2,6 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
     carregarJogadores();
 });
 
+function formatarDataBrasileira(data) {
+    const partes = data.split("-");
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
+}
+
 function carregarJogadores() {
 
     fetch('../app/controller/controllerCardsJogadores.php')
@@ -12,21 +17,20 @@ function carregarJogadores() {
             container.innerHTML = ""; // limpa antes de carregar
 
             if (!resultado.success || resultado.data.length === 0) {
-                container.innerHTML = "<p>Nenhum jogador cadastrado.</p>";
+                container.innerHTML = "<p class='nenhum-jogador'>Nenhum jogador cadastrado.</p>";
                 return;
             }
 
             resultado.data.forEach(jogador => {
                 container.innerHTML += `
                     <div class="card-jogador">
+                        <img src="../app/uploads/${jogador.foto}">
                         <h3>${jogador.nome}</h3>
-                        <img src="/../app/uploads/${jogador.foto}">
-                        <p><strong>data de nascimento:</strong> ${jogador.data_nascimento}</p>
-                        <p><strong>CPF:</strong> ${jogador.cpf}</p>
                         <p><strong>Email:</strong> ${jogador.email}</p>
-                        <p><strong>Telfone:</strong> ${jogador.telefone}</p>
                         <p><strong>Posição:</strong> ${jogador.posicao}</p>
-                        <p><strong>Categoria:</strong> ${jogador.telefone}</p>
+                        <p><strong>Categoria:</strong> ${jogador.categoria}</p>
+                        <p><strong>Telefone:</strong> ${jogador.telefone}</p>
+                        <p><strong>data de nascimento:</strong> ${formatarDataBrasileira(jogador.data_nascimento)}</p>
                         <p><strong>Cidade:</strong> ${jogador.cidade}</p>
                         <p><strong>Estado:</strong> ${jogador.estado}</p>
                     </div>
