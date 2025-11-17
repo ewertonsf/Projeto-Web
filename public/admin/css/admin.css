@@ -62,6 +62,7 @@
 .botao-saida {
   background-color: var(--cor-secundaria);
   color: var(--cor-clara-secundaria);
+  text-align: center;
   border: none;
   padding: 10px;
   border-radius: 6px;
