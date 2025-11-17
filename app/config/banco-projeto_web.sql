@@ -15,6 +15,31 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+DROP TABLE IF EXISTS `peneiras`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `peneiras` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL,
+  `descricao` text DEFAULT NULL,
+  `data_inicio` date NOT NULL,
+  `data_fim` date NOT NULL,
+  `local` varchar(150) NOT NULL,
+  `vagas` int(11) NOT NULL,
+  `status` enum('aberta','encerrada') DEFAULT 'aberta',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `peneiras`
+--
+
+LOCK TABLES `peneiras` WRITE;
+/*!40000 ALTER TABLE `peneiras` DISABLE KEYS */;
+/*!40000 ALTER TABLE `peneiras` ENABLE KEYS */;
+UNLOCK TABLES;
 --
 -- Table structure for table `jogadores`
 --
@@ -55,30 +80,7 @@ UNLOCK TABLES;
 -- Table structure for table `peneiras`
 --
 
-DROP TABLE IF EXISTS `peneiras`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `peneiras` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
-  `descricao` text DEFAULT NULL,
-  `data_inicio` date NOT NULL,
-  `data_fim` date NOT NULL,
-  `local` varchar(150) NOT NULL,
-  `vagas` int(11) NOT NULL,
-  `status` enum('aberta','encerrada') DEFAULT 'aberta',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `peneiras`
---
-
-LOCK TABLES `peneiras` WRITE;
-/*!40000 ALTER TABLE `peneiras` DISABLE KEYS */;
-/*!40000 ALTER TABLE `peneiras` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `usuarios`

@@ -1,6 +1,7 @@
 <?php
 session_start();
-require '../model/modelLogin.php';
+require_once '../config/conexao.php';
+require_once '../model/modelLogin.php';
 
 $model = new LoginModel($pdo);
 
