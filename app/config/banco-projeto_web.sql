@@ -36,9 +36,7 @@ CREATE TABLE `jogadores` (
   `data_inscricao` datetime DEFAULT current_timestamp(),
   `peneira_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `cpf` (`cpf`),
-  KEY `peneira_id` (`peneira_id`),
-  CONSTRAINT `jogadores_ibfk_1` FOREIGN KEY (`peneira_id`) REFERENCES `peneiras` (`id`)
+  UNIQUE KEY `cpf` (`cpf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
