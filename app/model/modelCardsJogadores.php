@@ -1,19 +1,17 @@
 <?php
 require_once '../config/conexao.php';
 
-class LoginModel {
+class CardsJogadoresModel {
     private $pdo;
 
     public function __construct($pdo) {
         $this->pdo = $pdo;
     }
 
-    public function buscarUsuario($email) {
-        $sql = "SELECT * FROM usuarios WHERE email = :email LIMIT 1";
+    public function buscarTodosJogadores() {
+        $sql = "SELECT * FROM jogadores ORDER BY id DESC";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':email', $email);
         $stmt->execute();
-
-        return $stmt->fetch();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
