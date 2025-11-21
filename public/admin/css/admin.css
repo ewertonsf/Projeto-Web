@@ -92,20 +92,6 @@
   color: #111827;
 }
 
-.botao-adicionar {
-  background-color: var(--cor-primaria);
-  color: var(--cor-clara-secundaria);
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-.botao-adicionar:hover {
-  background-color: var(--cor-hover);
-}
-
 .barra-pesquisa input {
   width: 100%;
   padding: 10px 12px;
@@ -141,6 +127,10 @@
   border-collapse: collapse;
 }
 
+.tabela-jogadores img {
+  width: 70px;
+}
+
 .tabela-jogadores th,
 .tabela-jogadores td {
   padding: 12px 16px;
@@ -159,11 +149,6 @@
 
 .tabela-jogadores tbody tr:hover {
   background-color: #f5f5f5;
-}
-
-.tabela-jogadores .acoes {
-  display: flex;
-  gap: 8px;
 }
 
 .btn-acao {

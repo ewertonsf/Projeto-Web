@@ -6,6 +6,7 @@
   <title>Painel Administrativo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -14,7 +15,7 @@
       <h2>Painel Admin</h2>
       <nav>
         <ul>
-          <li><a href="#">Jogadores</a></li>
+          <li><a href="admin.html">Jogadores</a></li>
         </ul>
       </nav>
       <a href="../index.html" class="botao-saida">
@@ -27,19 +28,19 @@
         <h1>Lista de Jogadores</h1>
       </div>
 
-      <div class="barra-pesquisa">
-        <input type="text" placeholder="Buscar pelo nome do usuário...">
-      </div>
-
       <div class="tabela-container">
         <table class="tabela-jogadores">
           <thead>
             <tr>
               <th>ID</th>
+              <th>Foto</th>
               <th>Nome</th>
               <th>Email</th>
+              <th>Telefone</th>
+              <th>Data de Nascimento</th>
               <th>Posição</th>
               <th>Categoria</th>
+              <th>Data da Iscrição</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -48,6 +49,117 @@
         </table>
       </div>
     </main>
+
+    <!-- Modal -->
+      <div id="modal-editar" class="modal">
+          <div class="modal-content">
+
+              <span class="close" onclick="fecharModalEditar()">&times;</span>
+
+              <h2 style="grid-column: 1 / -1; margin-bottom: 15px;">Editar Jogador</h2>
+
+              <form enctype="multipart/form-data" id="formEditar">
+
+                  <input type="hidden" id="edit_jogador_id" name="id" value="">
+
+                  <!-- FOTO -->
+                  <div class="modal-group modal-solo">
+                      <i class="fa-solid fa-image"></i>
+                      <input type="file" id="edit_foto">
+                  </div>
+
+                  <!-- NOME -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-user"></i>
+                      <input type="text" id="edit_nome" placeholder="Nome completo" required>
+                  </div>
+
+                  <!-- NASCIMENTO -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <input type="date" id="edit_data_nascimento" required>
+                  </div>
+
+                  <!-- CPF -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-id-card"></i>
+                      <input type="text" id="edit_cpf" placeholder="CPF (000.000.000-00)" required>
+                  </div>
+
+                  <!-- EMAIL -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-envelope"></i>
+                      <input type="email" id="edit_email" placeholder="E-mail" required>
+                  </div>
+
+                  <!-- TELEFONE -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-phone"></i>
+                      <input type="tel" id="edit_telefone" placeholder="Telefone">
+                  </div>
+
+                  <!-- POSIÇÃO -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-futbol"></i>
+                      <input type="text" id="edit_posicao" placeholder="Posição">
+                  </div>
+
+                  <!-- CATEGORIA -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-people-group"></i>
+                      <input type="text" id="edit_categoria" placeholder="Categoria">
+                  </div>
+
+                  <!-- CIDADE -->
+                  <div class="modal-group">
+                      <i class="fa-solid fa-city"></i>
+                      <input type="text" id="edit_cidade" placeholder="Cidade">
+                  </div>
+
+                  <!-- ESTADO -->
+                  <div class="modal-group modal-solo">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <select id="edit_estado" required>
+                          <option value="">Selecione um Estado</option>
+                          <option value="AC">Acre (AC)</option>
+                          <option value="AL">Alagoas (AL)</option>
+                          <option value="AP">Amapá (AP)</option>
+                          <option value="AM">Amazonas (AM)</option>
+                          <option value="BA">Bahia (BA)</option>
+                          <option value="CE">Ceará (CE)</option>
+                          <option value="DF">Distrito Federal (DF)</option>
+                          <option value="ES">Espírito Santo (ES)</option>
+                          <option value="GO">Goiás (GO)</option>
+                          <option value="MA">Maranhão (MA)</option>
+                          <option value="MT">Mato Grosso (MT)</option>
+                          <option value="MS">Mato Grosso do Sul (MS)</option>
+                          <option value="MG">Minas Gerais (MG)</option>
+                          <option value="PA">Pará (PA)</option>
+                          <option value="PB">Paraíba (PB)</option>
+                          <option value="PR">Paraná (PR)</option>
+                          <option value="PE">Pernambuco (PE)</option>
+                          <option value="PI">Piauí (PI)</option>
+                          <option value="RJ">Rio de Janeiro (RJ)</option>
+                          <option value="RN">Rio Grande do Norte (RN)</option>
+                          <option value="RS">Rio Grande do Sul (RS)</option>
+                          <option value="RO">Rondônia (RO)</option>
+                          <option value="RR">Roraima (RR)</option>
+                          <option value="SC">Santa Catarina (SC)</option>
+                          <option value="SP">São Paulo (SP)</option>
+                          <option value="SE">Sergipe (SE)</option>
+                          <option value="TO">Tocantins (TO)</option>
+                      </select>
+                  </div>
+
+                  <button type="button" onclick="salvarEdicao()" class="modal-btn">
+                      Salvar Alterações
+                  </button>
+
+              </form>
+          </div>
+      </div>
+    <!-- fim do modal -->
+     
   </div>
   <script src="js/admin.js"></script>
 </body>
