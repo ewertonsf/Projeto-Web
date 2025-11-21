@@ -8,31 +8,12 @@ class JogadorModel {
         $this->pdo = $pdo;
     }
 
-    public function buscarPorCpfOuEmail($cpf, $email, $id = null) {
-        $sql = "SELECT * FROM jogadores WHERE (cpf = :cpf OR email = :email)";
+    public function buscarPorId($id) {
+        $sql = "SELECT * FROM jogadores WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':cpf', $cpf);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->fetch();
-
-        if ($id !== null) {
-            $sql .= " AND id != :id";
-        }
-        
-
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':cpf', $cpf);
-        $stmt->bindParam(':email', $email);
-        
-        if ($id !== null) {
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        }
-        
-        $stmt->execute();
-        return $stmt->fetch();
-
-        $sql .= " LIMIT 1";
     }
 
     public function atualizarJogador($dados) {
@@ -61,7 +42,7 @@ class JogadorModel {
         $stmt->bindParam(':cidade', $dados['cidade']);
         $stmt->bindParam(':estado', $dados['estado']);
         $stmt->bindParam(':foto', $dados['foto']);
-        $stmt->bindParam(':id', $dados['id'], PDO::PARAM_INT); // ID é crucial para o WHERE
+        $stmt->bindParam(':id', $dados['id'], PDO::PARAM_INT);
 
         return $stmt->execute();
     }
