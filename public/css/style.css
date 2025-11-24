@@ -380,7 +380,6 @@ body {
   padding-bottom: 18px;
 }
 
-/* Colunas */
 .coluna-rodape {
   flex: 1 1 220px;
   min-width: 220px;
@@ -396,7 +395,6 @@ body {
   font-size: 14px;
 }
 
-/* Lista de contato */
 .coluna-rodape ul {
   list-style: none;
   padding: 0;
@@ -417,7 +415,6 @@ body {
   border-bottom: 1px solid #88003d;
 }
 
-/* Ícones redes sociais */
 .social-links {
   display: flex;
   gap: 12px;
@@ -458,13 +455,13 @@ body {
   flex-wrap: wrap;
 }
 
-.rodape-final a.privacy {
+.rodape-final  {
   color: rgba(246,244,245,0.9);
   text-decoration: none;
   border-bottom: 1px dashed transparent;
 }
 
-.rodape-final a.privacy:hover {
+.rodape-final:hover {
   border-bottom-color: rgba(255,255,255,0.12);
   color: #ffd9e6;
 }
@@ -493,5 +490,14 @@ body {
 
   .btn {
     width: 100%;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .card-jogador {
+    max-width: 90%;
+    margin: 0 auto 35px;
   }
 }
