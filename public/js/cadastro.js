@@ -10,16 +10,10 @@ function cadastroJogadores() {
     const estado = document.getElementById('estado').value;
     const foto = document.getElementById('foto').files[0];
 
-    console.log("Nome:", nome);
-    console.log("Data de nascimento:", data_nascimento);
-    console.log("CPF:", cpf);
-    console.log("E-mail:", email);
-    console.log("Telefone:", telefone);
-    console.log("Posição:", posicao);
-    console.log("Categoria:", categoria);
-    console.log("Cidade:", cidade);
-    console.log("Estado:", estado);
-    console.log("Foto:", foto ? foto.name : "Nenhum arquivo selecionado");
+    if (!nome || !data_nascimento || !cpf || !email || !telefone || !posicao || !categoria || !cidade || !estado || !foto) {
+        alert('Por favor, preencha todos os campos obrigatórios!');
+        return;
+    }
 
     const formData = new FormData();
     formData.append('nome', nome);
@@ -43,6 +37,7 @@ function cadastroJogadores() {
         if (data.success) {
             alert('Jogador cadastrado com sucesso!');
             document.getElementById('formCadastro').reset();
+            window.location.href = 'index.html';
         } else {
             alert('Erro: ' + (data.message || 'Tente novamente.'));
         }

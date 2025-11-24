@@ -182,6 +182,12 @@ body {
     text-decoration: underline;
 }
 
+.login-error {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 @media (max-width: 850px) {
     .login-container {
     flex-direction: column;

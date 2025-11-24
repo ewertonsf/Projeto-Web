@@ -1,0 +1,23 @@
+{
+    "name": "ewerton/projeto-web",
+    "autoload": {
+        "psr-4": {
+            "Ewerton\\ProjetoWeb\\": "src/",
+            "Auth\\": "zend/Auth/",
+            "Entity\\": "zend/Entity/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ewertonsf",
+            "email": "ewertonsf18@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.20",
+        "doctrine/doctrine-module": "^6.3",
+        "doctrine/doctrine-orm-module": "^6.3",
+        "laminas/laminas-mvc": "^3.8",
+        "symfony/cache": "^5.4"
+    }
+}

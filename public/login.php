@@ -25,7 +25,7 @@
       <h2>Bem-vindo</h2>
       <p>Entre na sua conta para continuar</p>
 
-      <form>
+      <form id="loginForm">
         <div class="form-group">
           <input type="email" id="email" placeholder="E-mail" required>
           <i class="fa-solid fa-envelope"></i>
